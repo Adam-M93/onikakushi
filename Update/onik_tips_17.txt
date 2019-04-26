@@ -12,7 +12,11 @@ void main()
 
 	DisableWindow();
 	DrawScene("black", 1000 );
-	PlayBGM( 1, "msys12", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 128, 0); }
 	ModDrawCharacterWithFiltering(3, 11, "sprite/normal/oisi1_1_", "0", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 0, FALSE );
 	DrawScene("background/ke_s2", 1000 );
 
@@ -168,14 +172,22 @@ void main()
 ////setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
 	DisableWindow();
 	DrawScene("background/mati7", 400 );
-	PlayBGM( 2, "lsys20", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys20", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys20", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys20", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\mati", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys20", 128, 0); }
 	Wait( 2000 );
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
 //!sd
 
 	DisableWindow();
 	DrawScene("black", 1000 );
-	PlayBGM( 1, "msys13", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\yoru", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys13", 128, 0); }
 //	DrawSceneWithMask( "bg_237", "up", 0, 0, 1300 );
 
 //「大石さんは友達多いから聞いてるかもしれないけど!w1000......聞いてるかな？＠

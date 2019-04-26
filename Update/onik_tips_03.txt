@@ -18,7 +18,12 @@ void main()
 	DisableWindow();
 	DrawScene("black", 1000 );
 
-	PlayBGM( 1, "msys02", 128, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { 	PlayBGM( 1, "msys02", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { 	PlayBGM( 1, "Original\msys02", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 2) { 	PlayBGM( 1, "April2019Update\msys02", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 3) { 	PlayBGM( 1, "Console\hm01_04", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 4) { 	PlayBGM( 1, "MangaGamer\mg02", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 5) { 	PlayBGM( 1, "Anime\msys02", 128, 0); }
 	ModDrawCharacterWithFiltering(1, 3, "sprite/normal/me1a_wink_a1_", "1", "left", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawScene("background/gk3", 1000 );
 
@@ -373,7 +378,11 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	DrawScene("background/g1", 1000 );
-	PlayBGM( 2, "lsys12", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys12", 128, 0); }
 
 //　セミの声はいよいよにぎやかで、空はどこまでも高い＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }

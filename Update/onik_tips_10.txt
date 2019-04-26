@@ -13,7 +13,12 @@ void main()
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/simen3", 1000 );
-	PlayBGM( 1, "msys07", 128, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { 	PlayBGM( 1, "msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { 	PlayBGM( 1, "Original\msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 2) { 	PlayBGM( 1, "April2019Update\msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 3) { 	PlayBGM( 1, "Console\hm06_25", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 4) { 	PlayBGM( 1, "MangaGamer\mg09", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 5) { 	PlayBGM( 1, "Anime\msys07", 128, 0); }
 
 //　昭和５６年６月ＸＸ日夕刊よ＠
 	ClearMessage();

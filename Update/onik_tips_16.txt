@@ -12,7 +12,11 @@ void main()
 
 	DisableWindow();
 	DrawScene("black", 1000 );
-	PlayBGM( 1, "msys12", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 128, 0); }
 	ModDrawCharacter(2, 11, "sprite/normal/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
 	DrawScene("background/ke_ky1", 400 );
 

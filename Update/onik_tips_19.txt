@@ -12,7 +12,12 @@ void main()
 	FadeOutBGM( 2, 1000, TRUE );
 	DisableWindow();
 	DrawScene("background/ke5", 400 );
-	PlayBGM( 1, "msys09", 128, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { 	PlayBGM( 1, "msys09", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { 	PlayBGM( 1, "Original\msys09", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 2) { 	PlayBGM( 1, "April2019Update\msys09", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 3) { 	PlayBGM( 1, "Console\hm04_18", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 4) { 	PlayBGM( 1, "MangaGamer\mg07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 5) { 	PlayBGM( 1, "Anime\msys09", 128, 0); }
 
 
 //「よく映画などに登場しますが、簡単にいうとどのようなものでしょうか。＠
@@ -159,15 +164,27 @@ void main()
 
 	FadeOutBGM( 1, 1000, TRUE );
 	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_011", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_011", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_011", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_011", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kira", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kira", 128, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
-	PlaySE( 4, "wa_010", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_010", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_010", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_010", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kyupirn", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kyupirn", 128, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
-	PlaySE( 4, "wa_029", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_029", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_029", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_029", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\boyoon", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\boyoon", 128, 64 ); }
 
 //...ですがその前にコマーシャル！！￥
 	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44010", 256, TRUE);

@@ -11,7 +11,11 @@ void main()
 
 	DisableWindow();
 	DrawScene("black", 1000 );
-	PlayBGM( 1, "msys12", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 128, 0); }
 	DrawScene("background/ji6", 1000 );
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
@@ -46,7 +50,11 @@ void main()
 		   NULL, "I also wish to ask for the assistance of everyone in regards to a few things...", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_021", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kami", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kami", 128, 64 ); }
 
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
@@ -84,7 +92,11 @@ void main()
 		   NULL, "Management: Makino - Tel (X) XXXX", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_021", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kami", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kami", 128, 64 ); }
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
@@ -116,7 +128,11 @@ void main()
 		   NULL, "Management: Kimiyoshi - Tel (X) XXXX", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_021", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kami", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kami", 128, 64 ); }
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
@@ -147,7 +163,11 @@ void main()
 		   NULL, "Management: Sonozaki - Tel (X) XXXX", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_021", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_021", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kami", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kami", 128, 64 ); }
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 

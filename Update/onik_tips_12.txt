@@ -14,7 +14,11 @@ void main()
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/m_y4", 1000 );
-	PlayBGM( 1, "msys13", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys13", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\yoru", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys13", 128, 0); }
 
 //「興宮ＳＴより、３号どうぞ＠３号どうぞ。＠
 	ClearMessage();

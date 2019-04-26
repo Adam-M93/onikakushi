@@ -14,7 +14,11 @@ void main()
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/ke_ky1", 400 );
-	PlayBGM( 2, "lsys12", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys12", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\higurasi", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys12", 128, 0); }
 
 //「自分で喉を掻き破った出血性ショック死＠
 	ClearMessage();

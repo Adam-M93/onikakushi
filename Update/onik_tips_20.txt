@@ -12,7 +12,12 @@ void main()
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/tennai1", 1000 );
-	PlayBGM( 1, "msys01", 128, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { 	PlayBGM( 1, "msys01", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { 	PlayBGM( 1, "Original\msys01", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 2) { 	PlayBGM( 1, "April2019Update\msys01", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 3) { 	PlayBGM( 1, "Console\hm01_01", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 4) { 	PlayBGM( 1, "MangaGamer\mg01", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 5) { 	PlayBGM( 1, "Original\msys01", 128, 0); }
 
 //　セブンスマートは市内にある、酒類食料品の安売量販店だ￥
 	ClearMessage();
@@ -127,7 +132,11 @@ void main()
 
 	FadeOutBGM( 1, 1000, TRUE );
 	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_023", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_023", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_023", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_023", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\himeraretakyousou", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\himeraretakyousou", 128, 64 ); }
 	SetValidityOfWindowDisablingWhenGraphicsControl( FALSE );
 	DrawFilm( 2, 153, 153, 153, 255, 0, 3000, TRUE );
 ////print 42
@@ -181,7 +190,12 @@ void main()
 		   NULL, "I go through the sound and presences again, looking.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys07", 128, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { 	PlayBGM( 1, "msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { 	PlayBGM( 1, "Original\msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 2) { 	PlayBGM( 1, "April2019Update\msys07", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 3) { 	PlayBGM( 1, "Console\hm06_25", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 4) { 	PlayBGM( 1, "MangaGamer\mg09", 128, 0); }
+	if (GetGlobalFlag(GAltBGMflow) == 5) { 	PlayBGM( 1, "Anime\msys07", 128, 0); }
 
 //　他の買い物客の気配＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -231,7 +245,11 @@ void main()
 
 	FadeOutBGM( 1, 1000, TRUE );
 	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_025", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\jikuunosakeme", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\jikuunosakeme", 128, 64 ); }
 
 //　その時、ぞくりとして時間の再生を止めた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -272,7 +290,11 @@ void main()
 		   NULL, "While carrying that frightening shadow on my back, I was gleefully running around the store searching for a case of noodles...?", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys16", 128, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys16", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys16", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys16", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi_r", 128, 0); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys16", 128, 0); }
 
 //　お袋への悪態をつきながら、インスタントのコーナーを駆け回る俺...＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -626,7 +648,11 @@ void main()
 		   NULL, " Follow the rules!!!", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_026", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_026", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_026", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_026", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\kirinomeikyuu", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\kirinomeikyuu", 128, 64 ); }
 
 //　ぺた＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -824,7 +850,11 @@ void main()
 
 
 
-	PlaySE( 4, "wa_025", 128, 64 );
+	if (GetGlobalFlag(GAltSEflow) == 0) {	PlaySE( 4, "wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) {	PlaySE( 4, "Original\wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) {	PlaySE( 4, "April2019Update\wa_025", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) {	PlaySE( 4, "Console\jikuunosakeme", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) {	PlaySE( 4, "MangaGamer\jikuunosakeme", 128, 64 ); }
 
 //locate 0,5
 
