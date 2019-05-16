@@ -20,9 +20,13 @@ void BrandLogo()
 
 	ModCallScriptSection("&opening", "OpeningQuestion");
 	
+	ModCallScriptSection("&sound", "SoundUseLast");
+	
 	ModCallScriptSection("&sound", "AudioQuestion");
 	
 	ModCallScriptSection("&sound", "MusicQuestion");
+	
+//	ModCallScriptSection("&sound", "ItaloQuestion");
 	
 	ModCallScriptSection("&sound", "SoundEffectQuestion");
 	
@@ -34,6 +38,10 @@ void BrandLogo()
 	Wait( 2000 );
 	DrawSceneWithMask( "07th-mod", "logomask", 0, 0, 1000 );
 	Wait( 2000 );
+	DrawSceneWithMask( "black", "logomask", 0, 0, 1000 );
+
+	Wait( 2000 );
+
 	DrawSceneWithMask( "black", "logomask", 0, 0, 1000 );
 
 	ModCallScriptSection("&opening", "OpeningLaunch");
@@ -377,7 +385,7 @@ void ChapterPreview()
 	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlaySE( 1, "Original\wa_037", 128, 64 ); }
 	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlaySE( 1, "April2019Update\wa_037", 128, 64 ); }
 	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlaySE( 1, "Console\se194", 128, 64 ); }
-	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlaySE( 1, "MangaGamer\se194", 128, 64 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlaySE( 1, "MangaGamer\mgse_21", 128, 64 ); }
 		FadeBustshot( 9, FALSE, 0, 0, 0, 0, 1000, TRUE );
 		DrawBustshot(9, "scenario/shortcuts", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 1000, TRUE );
 		Wait(10000);
