@@ -20,9 +20,13 @@ void BrandLogo()
 
 	ModCallScriptSection("&opening", "OpeningQuestion");
 
+	ModCallScriptSection("&sound", "SoundUseLast");
+	
 	ModCallScriptSection("&sound", "AudioQuestion");
 	
 	ModCallScriptSection("&sound", "MusicQuestion");
+	
+//	ModCallScriptSection("&sound", "ItaloQuestion");
 	
 	ModCallScriptSection("&sound", "SoundEffectQuestion");
 	
@@ -31,9 +35,9 @@ void BrandLogo()
 	DrawBG( "07thlogo", 1000, TRUE );
 	Wait( 2000 );
 	DrawSceneWithMask( "mangagamer", "logomask", 0, 0, 1000 );
+
 	Wait( 2000 );
-	DrawSceneWithMask( "07th-mod", "logomask", 0, 0, 1000 );
-	Wait( 2000 );
+
 	DrawSceneWithMask( "black", "logomask", 0, 0, 1000 );
 
 	ModCallScriptSection("&opening", "OpeningLaunch");
