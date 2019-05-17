@@ -8,7 +8,7 @@ void AudioQuestion ()
 
 	DrawScene("scenario_a", 500);
 	
-	if (GetGlobalFlag(GAudioSwitch) == 0) {
+	if (GetGlobalFlag(GAudioSwitch) < 2) {
 		OutputLine(NULL, "次回の起動時にもう一度質問しますか？",
 			   NULL, "Would you like to use the default BGM and Sound Effects?", Line_Normal);
 
