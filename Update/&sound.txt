@@ -1,245 +1,313 @@
+// JAPANESE TEXT IS GOOGLE TRANSLATED AS PLACEHOLDER
 void main()
 {
+	DrawScene("scenario_a", 500);
+		
+	if (GetGlobalFlag(GAudioSwitch) == 3) 
+	{
+		OutputLine(NULL, "最後に選択したオーディオ選択を使用しますか？",
+			   NULL, "Would you like to use your last chosen audio selection?", Line_Normal);
+
+		char Main[2];
+
+		if (GetGlobalFlag(GLanguage) == 1) 
+		{
+			Main[0] = "Keep Previous Audio Selection";
+			Main[1] = "Clear Choice and Pick Again";
+		} 
+		else 
+		{
+			Main[0] = "前のオーディオ選択を維持";
+			Main[1] = "選択をクリアしてもう一度ピック";
+		}
+
+		Select( 2, Main );
+
+		if (LoadValueFromLocalWork(SelectResult) == 0) 
+		{
+			SetGlobalFlag(GAudioSwitch, 3); 
+		} 
+		if (LoadValueFromLocalWork(SelectResult) == 1) 
+		{
+			SetGlobalFlag(GAudioSwitch, 0); 
+		}
+		DisableWindow();
+	}
+	CallSection("SoundQuestion");
 }
 
-// JAPANESE TEXT IS GOOGLE TRANSLATED AS PLACEHOLDER
-void AudioQuestion ()
+void SoundQuestion ()
 {
-
-	DrawScene("scenario_a", 500);
-	
-	if (GetGlobalFlag(GAudioSwitch) == 0) {
-		OutputLine(NULL, "次回の起動時にもう一度質問しますか？",
+	if (GetGlobalFlag(GAudioSwitch) < 2) 
+	{
+		OutputLine(NULL, "デフォルトのBGMとサウンドエフェクトを使いますか？",
 			   NULL, "Would you like to use the default BGM and Sound Effects?", Line_Normal);
 
 		char Item[2];
 
-		if (GetGlobalFlag(GLanguage) == 1) {
+		if (GetGlobalFlag(GLanguage) == 1) 
+		{
 			Item[0] = "Use Default";
 			Item[1] = "Select Soundtrack and Sound Effects";
-		} else {
-			Item[0] = "Use Default";
-			Item[1] = "Select Soundtrack and Sound Effects";
+		} 
+		else 
+		{
+			Item[0] = "デフォルトを使用します";
+			Item[1] = "サウンドトラックとサウンドエフェクトを選択する";
 		}
 
 		Select( 2, Item );
 
-		if (LoadValueFromLocalWork(SelectResult) == 0) {
-			SetGlobalFlag(GAudioSwitch, 2); } 
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
-			SetGlobalFlag(GAudioSwitch, 1); }
-
+		if (LoadValueFromLocalWork(SelectResult) == 0) 
+		{
+			SetGlobalFlag(GAudioSwitch, 2); 
+		} 
+		if (LoadValueFromLocalWork(SelectResult) == 1) 
+		{
+			SetGlobalFlag(GAudioSwitch, 1); 
+		}
 		DisableWindow();
 	}
+	CallSection("MusicQuestion");
 }
 
 void MusicQuestion()
 {
-	if (GetGlobalFlag(GAudioSwitch) == 1) {
+	if (GetGlobalFlag(GAudioSwitch) == 1) 
+	{
 		OutputLine(NULL, "どのサウンドトラックを使用しますか？",
 			   NULL, "Which Soundtrack would you like to use?", Line_Normal);
 			   
-		char Item[7];
+		char BGM[7];
 
-		if (GetGlobalFlag(GLanguage) == 1) {
-			Item[0] = "07th-Mod Audio Pack Music";
-			Item[1] = "Original Music (2002)";
-			Item[2] = "New Update Music (2019)";
-			Item[3] = "Console Music";
-			Item[4] = "MangaGamer Music (2009)";
-			Item[5] = "Anime Music";
-			Item[6] = "Back";		
-		} else {
-			Item[0] = "07th-Mod Audio Pack Music";		
-			Item[1] = "Original Music (2002)";
-			Item[2] = "New Update Music (2019)";
-			Item[3] = "Console Music";
-			Item[4] = "MangaGamer Music (2009)";
-			Item[5] = "Anime Music";
-			Item[6] = "Back";		
+		if (GetGlobalFlag(GLanguage) == 1) 
+		{
+			BGM[0] = "07th-Mod Audio Pack Music";
+			BGM[1] = "Original Music (2002)";
+			BGM[2] = "New Update Music (2019)";
+			BGM[3] = "Console Music";
+			BGM[4] = "MangaGamer Music (2009)";
+			BGM[5] = "Anime Music";
+			BGM[6] = "Back";		
+		} 
+		else 
+		{
+			BGM[0] = "07th-Modオーディオパックミュージック";		
+			BGM[1] = "オリジナルミュージック（2002）";
+			BGM[2] = "新しいアップデートミュージック（2019）";
+			BGM[3] = "コンソールミュージック";
+			BGM[4] = "MANGAGAMERミュージック（2009）";
+			BGM[5] = "アニメ音楽";
+			BGM[6] = "バック";		
 		}
 
-		Select( 7, Item );
+		Select( 7, BGM );
 
-		if (LoadValueFromLocalWork(SelectResult) == 0) {
+		if (LoadValueFromLocalWork(SelectResult) == 0) 
+		{
 			SetGlobalFlag(GAltBGMflow, 0); 
 			SetGlobalFlag(GAltSEflow, 0); 
-			SetGlobalFlag(GItaloVer, 1); }
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
+			SetGlobalFlag(GItaloVer, 1); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 1) 
+		{
 			SetGlobalFlag(GAltBGMflow, 1);
 			SetGlobalFlag(GAltSEflow, 1); 
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 2) {
+			SetGlobalFlag(GItaloVer, 0); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 2) 
+		{
 			SetGlobalFlag(GAltBGMflow, 2);
 			SetGlobalFlag(GAltSEflow, 2); 
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 3) {
+			SetGlobalFlag(GItaloVer, 0); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 3) 
+		{
 			SetGlobalFlag(GAltBGMflow, 3);
 			SetGlobalFlag(GAltSEflow, 3); 
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 4) {
+			SetGlobalFlag(GItaloVer, 0); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 4) 
+		{
 			SetGlobalFlag(GAltBGMflow, 4);
 			SetGlobalFlag(GAltSEflow, 4); 
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 5) {
+			SetGlobalFlag(GItaloVer, 0); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 5) 
+		{
 			SetGlobalFlag(GAltBGMflow, 5);
 			SetGlobalFlag(GAltSEflow, 0); 
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 6) {
+			SetGlobalFlag(GItaloVer, 0); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 6) 
+		{
 			DisableWindow();
 			DrawScene("black", 500);
-			JumpScript( "flow" );	}
-
+			JumpScript( "flow" );	
+		}
 		DisableWindow();
-		
 	}
+	//CallSection("ItaloQuestion");
+	CallSection("SoundEffectQuestion");
 }
 
 void ItaloQuestion()
 {
-	if (GetGlobalFlag(GItaloVer) == 0) {
-		OutputLine(NULL, "次回の起動時にもう一度質問しますか？",
-			   NULL, "Would you like to use the OST Remake by Italo? These are handmade remakes of several music tracks from the original release (pre-2019)", Line_Normal);
+	if (GetGlobalFlag(GAudioSwitch) < 3) 
+	{
+		if (GetGlobalFlag(GItaloVer) == 0) 
+		{
+			OutputLine(NULL, "ItaloによるOSTリメイクを使用しますか？ これらはオリジナルリリース（2019年以前）からのいくつかの音楽トラックの手作りのリメイクです。",
+				NULL, "Would you like to use the OST Remake by Italo? These are handmade remakes of several music tracks from the original release (pre-2019)", Line_Normal);
 
-		char Item[3];
+			char Italo[3];
 
-		if (GetGlobalFlag(GLanguage) == 1) {
-			Item[0] = "Yes";
-			Item[1] = "No";
-			Item[2] = "Back";	
-		} else {
-			Item[0] = "はい";
-			Item[1] = "いいえ";
-			Item[2] = "Back";	
-		}
+			if (GetGlobalFlag(GLanguage) == 1) 
+			{
+				Italo[0] = "Yes";
+				Italo[1] = "No";
+				Italo[2] = "Back";	
+			} 
+			else 
+			{
+				Italo[0] = "はい";
+				Italo[1] = "いいえ";
+				Italo[2] = "バック";	
+			}
 
-		Select( 3, Item );
+			Select( 3, Italo );
 
-		if (LoadValueFromLocalWork(SelectResult) == 0) {
-			SetGlobalFlag(GItaloVer, 1); } 
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
-			SetGlobalFlag(GItaloVer, 0); }
-		if (LoadValueFromLocalWork(SelectResult) == 2) {
+			if (LoadValueFromLocalWork(SelectResult) == 0) 
+			{
+				SetGlobalFlag(GItaloVer, 1); 
+			} 
+			if (LoadValueFromLocalWork(SelectResult) == 1) 
+			{
+				SetGlobalFlag(GItaloVer, 0); 
+			}
+			if (LoadValueFromLocalWork(SelectResult) == 2) 
+			{
+				DisableWindow();
+				DrawScene("black", 500);
+				JumpScript( "flow" );	
+			}
 			DisableWindow();
-			DrawScene("black", 500);
-			JumpScript( "flow" );	}
-
-		DisableWindow();
+		}
 	}
+	CallSection("SoundEffectQuestion");
 }
 
 void SoundEffectQuestion()
 {
-	if (GetGlobalFlag(GAudioSwitch) == 1) {
-		OutputLine(NULL, "どのサウンドトラックを使用しますか？",
+	if (GetGlobalFlag(GAudioSwitch) == 1) 
+	{
+		OutputLine(NULL, "どの音響効果を使用しますか？",
 			   NULL, "What sound effects would you like to use?", Line_Normal);
 
-		char Item[7];
+		char SE[7];
 
-		if (GetGlobalFlag(GLanguage) == 1) {
-			Item[0] = "Match Music Selection";	
-			Item[1] = "07th-Mod Audio Pack Sound Effects";			
-			Item[2] = "Original Sound Effects (2002)";
-			Item[3] = "New Update Sound Effects (2019)";
-			Item[4] = "Console Sound Effects";
-			Item[5] = "MangaGamer Sound Effects (2009)";
-			Item[6] = "Back";			
-		} else {
-			Item[0] = "Match Music Selection";	
-			Item[1] = "07th-Mod Audio Pack Sound Effects";			
-			Item[2] = "Original Sound Effects";
-			Item[3] = "New Update Sound Effects";
-			Item[4] = "Console Sound Effects";
-			Item[5] = "MangaGamer Sound Effects (2009)";
-			Item[6] = "Back";	
+		if (GetGlobalFlag(GLanguage) == 1) 
+		{
+			SE[0] = "Match Music Selection";	
+			SE[1] = "07th-Mod Audio Pack Sound Effects";			
+			SE[2] = "Original Sound Effects (2002)";
+			SE[3] = "New Update Sound Effects (2019)";
+			SE[4] = "Console Sound Effects";
+			SE[5] = "MangaGamer Sound Effects (2009)";
+			SE[6] = "Back";			
+		} 
+		else
+		{
+			SE[0] = "音楽の選択を合わせる";	
+			SE[1] = "07th-Modオーディオパックのサウンドエフェクト";			
+			SE[2] = "オリジナルの効果音";
+			SE[3] = "新しいアップデートサウンドエフェクト";
+			SE[4] = "コンソールサウンドエフェクト";
+			SE[5] = "MANGAGAMERサウンドエフェクト（2009）";
+			SE[6] = "バック";	
 		}
 
-		Select( 7, Item );
+		Select( 7, SE );
 
-		if (LoadValueFromLocalWork(SelectResult) == 0) { 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
+		if (LoadValueFromLocalWork(SelectResult) == 0) 
+		{ 
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 1) 
+		{
 			SetGlobalFlag(GAltSEflow, 0); 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 2) {
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 2) 
+		{
 			SetGlobalFlag(GAltSEflow, 1); 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 3) {
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 3) 
+		{
 			SetGlobalFlag(GAltSEflow, 2); 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 4) {
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 4) 
+		{
 			SetGlobalFlag(GAltSEflow, 3); 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 5) {
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 5) 
+		{
 			SetGlobalFlag(GAltSEflow, 4); 
-			SetGlobalFlag(GAudioSwitch, 3); }
-		if (LoadValueFromLocalWork(SelectResult) == 6) { 
+			SetGlobalFlag(GAudioSwitch, 3); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 6) 
+		{ 
 			DisableWindow();
 			DrawScene("black", 500);
-			JumpScript( "flow" );	}
-
+			JumpScript( "flow" );	
+		}
 		DisableWindow();
 	}
+	CallSection("SoundAskAgain");
 }
 
 void SoundAskAgain ()
 {
-	if (GetGlobalFlag(GAudioSwitch) == 2) {
+	if (GetGlobalFlag(GAudioSwitch) == 2) 
+	{
 		OutputLine(NULL, "次回の起動時にもう一度質問しますか？",
 			   NULL, "Would you like to be asked again on next startup?", Line_Normal);
 
 		char Item[3];
 
-		if (GetGlobalFlag(GLanguage) == 1) {
+		if (GetGlobalFlag(GLanguage) == 1) 
+		{
 			Item[0] = "Yes";
 			Item[1] = "No";
 			Item[2] = "Back";	
-		} else {
+		} 
+		else 
+		{
 			Item[0] = "はい";
 			Item[1] = "いいえ";
-			Item[2] = "Back";	
+			Item[2] = "バック";	
 		}
 
 		Select( 3, Item );
 
-		if (LoadValueFromLocalWork(SelectResult) == 0) {
-			SetGlobalFlag(GAudioSwitch, 0); } 
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
-			SetGlobalFlag(GAudioSwitch, 2); }
-		if (LoadValueFromLocalWork(SelectResult) == 2) {
+		if (LoadValueFromLocalWork(SelectResult) == 0) 
+		{
+			SetGlobalFlag(GAudioSwitch, 0); 
+		} 
+		if (LoadValueFromLocalWork(SelectResult) == 1) 
+		{
+			SetGlobalFlag(GAudioSwitch, 2); 
+		}
+		if (LoadValueFromLocalWork(SelectResult) == 2) 
+		{
 			DisableWindow();
 			DrawScene("black", 500);
-			JumpScript( "flow" );	}
-
-		DisableWindow();
-	}
-}
-
-void SoundUseLast ()
-{
-	DrawScene("scenario_a", 500);
-		
-	if (GetGlobalFlag(GAudioSwitch) == 3) {
-		OutputLine(NULL, "次回の起動時にもう一度質問しますか？",
-			   NULL, "Would you like to use your last chosen audio selection?", Line_Normal);
-
-		char Item[2];
-
-		if (GetGlobalFlag(GLanguage) == 1) {
-			Item[0] = "Keep Previous Audio Selection";
-			Item[1] = "Clear Choice and Pick Again";
-		} else {
-			Item[0] = "Keep Previous Audio Selection";
-			Item[1] = "Clear Choice and Pick Again";
+			JumpScript( "flow" );	
 		}
-
-		Select( 2, Item );
-
-		if (LoadValueFromLocalWork(SelectResult) == 0) {
-			SetGlobalFlag(GAudioSwitch, 3); } 
-		if (LoadValueFromLocalWork(SelectResult) == 1) {
-			SetGlobalFlag(GAudioSwitch, 0); }
-
 		DisableWindow();
 	}
 }
+
