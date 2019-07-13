@@ -3,8 +3,9 @@ void main()
 	// Max Number for Global Flags hotkey
 	SetGlobalFlag(GCensorMaxNum , 5);
 	SetGlobalFlag(GEffectExtendMaxNum , 0);
-	SetGlobalFlag(GAltBGMflowMaxNum , 0);
-	SetGlobalFlag(GAltSEflowMaxNum , 0);
+	SetGlobalFlag(GAltBGMflowMaxNum , 5);
+	SetGlobalFlag(GAltSEflowMaxNum , 4);
+	SetGlobalFlag(GTextboxMaxNum , 2);
 
 	// restore default ADV-MODE setting
 	if(GetGlobalFlag(GMOD_SETTING_LOADER) == 0) {
@@ -24,6 +25,7 @@ void main()
 		SetGlobalFlag(GWindowOpacity , 100);
 		SetGlobalFlag(GHideButtons , 0);
 		SetGlobalFlag(GArtStyle , 0);
+		SetGlobalFlag(GItaloVer , 0);
 		SetGlobalFlag(GMOD_SETTING_LOADER , 3);
 	}
 
@@ -45,6 +47,7 @@ void main()
 		SetGlobalFlag(GWindowOpacity , 50);
 		SetGlobalFlag(GHideButtons , 0);
 		SetGlobalFlag(GArtStyle , 0);
+		SetGlobalFlag(GItaloVer , 0);
 		SetGlobalFlag(GMOD_SETTING_LOADER , 3);
 	}
 
@@ -71,9 +74,26 @@ void main()
 		SetGlobalFlag(GAltBGMflowMaxNum , 0);
 		SetGlobalFlag(GAltSEflowMaxNum , 0);
 		SetGlobalFlag(GArtStyle , 1);
+		SetGlobalFlag(GItaloVer , 0);
 	}
 
 	ModADVModeSettingLoad(
+		"<size=+4>{0}\n</size>", //NameFormat
+		-170, //WindowPosX
+		-275, //WindowPosY
+		1150, //WindowSizeX
+		250, //WindowSizeY
+		60, //WindowMarginLeft
+		30, //WindowMarginTop
+		50, //WindowMarginRight
+		30, //WindowMarginBottom
+		3, //FontID
+		0, //CharSpacing
+		8, //LineSpacing
+		30 //FontSize
+	);
+		
+	ModTextbox3SettingLoad(
 		"<size=+4>{0}\n</size>", //NameFormat
 		-170, //WindowPosX
 		-300, //WindowPosY
@@ -99,7 +119,7 @@ void main()
 		30, //WindowMarginTop
 		50, //WindowMarginRight
 		30, //WindowMarginBottom
-		1, //FontID
+		3, //FontID
 		0, //CharSpacing
 		8, //LineSpacing
 		34 //FontSize
@@ -115,16 +135,18 @@ void main()
 		30, //WindowMarginTop
 		50, //WindowMarginRight
 		30, //WindowMarginBottom
-		1, //FontID
+		3, //FontID
 		0, //CharSpacing
 		8, //LineSpacing
 		34 //FontSize
 	);
-
+	
 	SetScreenAspect("0.5625");
 	SetGUIPosition(170, 0);
 	ModSetConfigFontSize(15);
 	ModSetMainFontOutlineWidth(10);
+	ModSetHighestChapterFlag(0, 15);
+	
 
 	CallScript( "flow" );
 }
