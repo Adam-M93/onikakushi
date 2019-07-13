@@ -5,16 +5,20 @@ void main()
 
 //*Onikakusi_day14
 
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
-	PlayBGM( 2, "lsys22", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\suzume_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys22", 56, 0 ); }
 	DrawSceneWithMask("white", "c", 0, 0, 1300 );
 	DrawSceneWithMask("background/ma_j3_01", "m1", 0, 0, 300 );
 
-	PlayBGM( 1, "msys06", 56, 0 );
+	ModPlayBGM( 1, "msys06", "hm01_03", "mg_bgm11", 56, 0 );
 //　これほどはっきりと意識が戻る目覚め方をしたのは初めてだった￥
 	ClearMessage();
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -279,11 +283,15 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 	DrawSceneWithMask("white", "right", 0, 0, 1300 );
 	DrawSceneWithMask("background/m_hi1", "right", 0, 0, 1300 );
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
 	DrawSceneWithMask("background/m_hi3", "right", 0, 0, 1300 );
 
 //　今まではいつも同じ時間に同じ場所を歩いていた＠
@@ -429,7 +437,11 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("background/hi3", "right", 0, 0, 300 );
-	PlayBGM( 2, "lsys19", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\kawa", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys19", 56, 0 ); }
 
 //　…いちいち人に会うたびに、レナたちの同行を聞かれるのは面白くなかった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -487,8 +499,8 @@ void main()
 		   NULL, "You spent all day yesterday thinking about how dangerous it was to go soft, didn't you...?", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //　パッパッパーーッ！！￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -523,7 +535,11 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("black", "c", 0, 0, 300 );
-	PlayBGM( 2, "msys16", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\msys16", 56, 0 ); }
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
@@ -563,7 +579,7 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	DrawScene("background/hi3", 400 );
-	PlaySE( 4, "wa_025", 56, 64 );
+	ModPlaySE( 4, "wa_025", "jikuunosakeme", "mg_se15", 56, 64 );
 
 //　眼前に迫ったその巨体＠……俺は「轢かれる」ッ？！？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -583,7 +599,11 @@ void main()
 
 	DisableWindow();
 	Negative( 100, TRUE );
-	PlayBGM( 2, "lsys25", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\kaze_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys25", 56, 0 ); }
 
 //　その瞬間、目の前の光景、いや、時間が凍り付いた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -638,12 +658,12 @@ void main()
 	ClearMessage();
 
 
-	FadeOutBGM( 2, 100, TRUE );
+	ModFadeOutBGM( 2, 100, TRUE );
 //nega 0
 //print 1
 	DisableWindow();
 	FadeFilm( 100, TRUE );
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 
 //　サイドミラーが俺の肩を殴り飛ばし、俺のねじれた体勢をそのままぐるぐると、コマのように回転させて弾き飛ばす…ッ！￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -654,7 +674,7 @@ void main()
 
 	DisableWindow();
 	DrawScene("black", 200 );
-	PlaySE( 4, "wa_003", 56, 64 );
+	ModPlaySE( 4, "wa_003", "down2", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 50, 20, 5, 0, );
 
 //　ドッパーン！！！/
@@ -711,7 +731,11 @@ void main()
 		   NULL, "I'm not sure if he was able to see me, but the van sped off suddenly.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 2, "lsys19", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\kawa", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys19", 56, 0 ); }
 
 //「待てよクソ！＠　これって……轢き逃げって言うんじゃねえのかよッ？！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
@@ -746,7 +770,11 @@ void main()
 		   NULL, "I slogged through the muddy paddy and made my way back onto the road.", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
 	DrawSceneWithMask("background/hi3", "up", 0, 0, 200 );
 
 //「これって犯罪じゃねえのかよ畜生…！！＠
@@ -794,9 +822,9 @@ void main()
 		   NULL, "Even as I cursed, I was desperately trying to suppress the dark cloud roiling up within me.", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_026", 56, 64 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
+	ModPlaySE( 4, "wa_026", "kirinomeikyuu", "mg_se13", 56, 64 );
 
 //　轢き逃げとかそういうのじゃなくて!s100……!sd今の車、!w1000……俺をはねようとしてたんじゃないのか…￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -818,7 +846,11 @@ void main()
 		   NULL, " was trying to run me over, wasn't it...?", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys16", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys16", 56, 0 ); }
 //　思い出してみると…少し前から俺の後ろをずっと車が、徐行でついてきていたような気がする＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　思い出してみると…少し前から俺の後ろをずっと車が、徐行でついてきていたような気がする。",
@@ -1101,8 +1133,16 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	FadeBustshotWithFiltering( 5, "up", 0, FALSE, 0, 0, 1300, TRUE );
-	PlayBGM( 1, "lsys22", 56, 0 );
-	PlayBGM( 2, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\suzume_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\msys12", 56, 0 ); }
 
 //　急に強くなった日差しが俺に軽い眩暈を起こさせた＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1187,8 +1227,8 @@ void main()
 	ClearMessage();
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //■学校にて
 	DisableWindow();
@@ -1204,8 +1244,16 @@ void main()
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
 //!sd
 
-	PlayBGM( 1, "msys12", 56, 0 );
-	PlayBGM( 2, "lsys22", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\suzume_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys22", 56, 0 ); }
 //　武器となる金属バットは確か体育倉庫の中で見かけたが、扉には南京錠がかかっていて入れなかった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　武器となる金属バットは確か体育倉庫の中で見かけたが、扉には南京錠がかかっていて入れなかった。",
@@ -1487,9 +1535,9 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 400, TRUE );
-	PlaySE( 4, "wa_023", 56, 64 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 400, TRUE );
+	ModPlaySE( 4, "wa_023", "himeraretakyousou", "mg_se13", 56, 64 );
 
 //　それは紛れもなく金属バットだった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1505,8 +1553,16 @@ void main()
 		   NULL, "It was well-worn and pretty beaten up, but there was no doubt it was usable.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys12", 56, 0 );
-	PlayBGM( 2, "lsys22", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\suzume_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys22", 56, 0 ); }
 
 //　かび臭いロッカーの中には他にも野球チームのユニフォームも吊るしてあった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1544,9 +1600,9 @@ void main()
 		   NULL, "Amongst them I could make out Rika-chan and Satoko.", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	PlaySE( 4, "wa_020", 56, 64 );
-	FadeOutBGM( 2, 400, TRUE );
-	PlayBGM( 1, "msysSa", 56, 0 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
+	ModFadeOutBGM( 2, 400, TRUE );
+	ModPlayBGM( 1, "msysSa", "hm01_03", "mg_bgm02", 56, 0 );
 	ModDrawCharacterWithFiltering(1, 5, "sprite/normal/ri1_def_a1_", "0", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 1300, TRUE );
 
 //「…おはようございますです。＠
@@ -1633,7 +1689,7 @@ void main()
 
 	DisableWindow();
 	FadeBustshotWithFiltering( 3, "left", 1, FALSE, 0, 0, 300, TRUE );
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 
 //　沙都子は呆れたふりをすると、赤面したまま廊下へ出て行った￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1693,7 +1749,7 @@ void main()
 
 	DisableWindow();
 	FadeBustshotWithFiltering( 1, "left", 1, FALSE, 0, 0, 300, TRUE );
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 
 //　梨花ちゃんは自分もレディーと認めてもらったことに満足すると、沙都子を追って廊下へ出て行った＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1818,11 +1874,19 @@ void main()
 		   NULL, "I still had plenty of time before class began because I came so early.", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	FadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
 	DrawSceneWithMask("background/gr1", "left", 0, 0, 300 );
 
-	PlayBGM( 1, "msys12", 56, 0 );
-	PlayBGM( 2, "lsys22", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys22", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\suzume_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys22", 56, 0 ); }
 //　俺はバットを片手に校庭へ出ることにした。もちろん素振りのためだ＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　俺はバットを片手に校庭へ出ることにした。もちろん素振りのためだ。",
@@ -1889,7 +1953,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 	Wait( 800 );
 
 //　…手ごたえは決して軽くない＠
@@ -1930,11 +1994,11 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 1000, TRUE );
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 	Wait( 800 );
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 	Wait( 800 );
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 	Wait( 800 );
 	ModDrawCharacter(1, 3, "sprite/normal/me1a_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	ModDrawCharacter(3, 2, "sprite/normal/re1a_bikkuri_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
@@ -2120,7 +2184,7 @@ void main()
 
 
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //「………くそッ！！＠　何笑ってんだよ、俺ッ！！！＠
@@ -2135,10 +2199,10 @@ void main()
 
 
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 	Wait( 1000 );
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //　何度も何度も地面を殴りつける＠…その度にがつんがつんと伝わる振動が痛かった￥
@@ -2239,7 +2303,7 @@ void main()
 	OutputLine(NULL, "「…甘えるんじゃねえぇえぇええぇッ！！！！」",
 		   NULL, "\"...Stop being so sooooooft!!!!\"", Line_Continue);
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
@@ -2262,7 +2326,7 @@ void main()
 
 
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //　殴る＠忘れろ＠/
@@ -2272,7 +2336,7 @@ void main()
 	OutputLine(NULL, "忘れろ。",
 		   NULL, " Forget.", Line_WaitForInput);
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //殴る＠甘えるな＠/
@@ -2281,7 +2345,7 @@ void main()
 	OutputLine(NULL, "甘えるな。",
 		   NULL, " Don't be soft.", Line_WaitForInput);
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //殴る＠敵を知れ＠/
@@ -2291,7 +2355,7 @@ void main()
 		   NULL, " Know your enemy.", Line_WaitForInput);
 
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	ShakeScreen( 1, 5, 5, 5, 0, );
 
 //殴る＠殺されてたまるか＠
@@ -2300,7 +2364,7 @@ void main()
 	OutputLine(NULL, "殺されてたまるか。",
 		   NULL, " Like hell I'd let them kill me.", GetGlobalFlag(GLinemodeSp));
 
-	PlaySE( 4, "wa_001", 56, 64 );
+	ModPlaySE( 4, "wa_001", "chaimu", "mg_se01", 56, 64 );
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
@@ -2313,7 +2377,11 @@ void main()
 	DisableWindow();
 	DrawScene("black", 3000 );
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
 	DrawSceneWithMask("background/gr2", "down", 0, 0, 1300 );
 	SetValidityOfInput( FALSE );
 	Wait( 4000 );
@@ -2323,7 +2391,7 @@ void main()
 //■下校へ
 
 	DisableWindow();
-	PlaySE( 4, "wa_001", 56, 64 );
+	ModPlaySE( 4, "wa_001", "chaimu", "mg_se01", 56, 64 );
 	SetValidityOfInput( FALSE );
 	Wait( 1500 );
 	SetValidityOfInput( TRUE );
@@ -2527,8 +2595,8 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	FadeOutBGM( 2, 400, TRUE );
-	PlayBGM( 1, "msys06", 56, 0 );
+	ModFadeOutBGM( 2, 400, TRUE );
+	ModPlayBGM( 1, "msys06", "hm01_03", "mg_bgm11", 56, 0 );
 	ModDrawCharacterWithFiltering(2, 2, "sprite/normal/re1a_komaru_a2_", "0", "m1", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
 
 //「……………圭一くん、…やっぱり女の子と一緒に遊ぶのなんか、…嫌だったかな。……かな。＠
@@ -2591,15 +2659,19 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 	DrawSceneWithMask("black", "right", 0, 0, 200 );
-	FadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
 
 //■下校中・レナとの不穏な会話
 
 	DisableWindow();
 	DrawScene("white", 3000 );
-	PlayBGM( 1, "msys11", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\higurasi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys11", 56, 0 ); }
 	DrawSceneWithMask("background/m_hi4", "right", 0, 0, 1300 );
 
 //　退屈で長い帰宅だったが、俺は気を許すことはなかった＠
@@ -3116,7 +3188,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 
 //　俺は道を開けるとバットを乱暴に振り、レナに前を歩くよう促した＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3204,7 +3276,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 
 //　バットを振り、先を歩くよう改めて促す＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3319,7 +3391,11 @@ void main()
 
 
 
-	PlayBGM( 2, "lsys25", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys25", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\kaze_lp", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys25", 56, 0 ); }
 
 //　その時、一際強い風がざぁっと吹き、砂粒が顔を激しく叩いた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3327,7 +3403,7 @@ void main()
 		   NULL, "Then, a powerful gust blew past us, barraging my face with dust.", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	FadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
 	DrawSceneWithMask("black", "left", 0, 0, 300 );
 
 //　目にも砂粒が飛び込み、視界を涙でぐちゃぐちゃにしてしまう…＠
@@ -3337,11 +3413,11 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 	DisableWindow();
-	PlaySE( 4, "wa_008", 56, 64 );
+	ModPlaySE( 4, "wa_008", "furu", "mg_se05", 56, 64 );
 	SetValidityOfInput( FALSE );
 	Wait( 600 );
 	SetValidityOfInput( TRUE );
-	PlaySE( 4, "wa_015", 56, 64 );
+	ModPlaySE( 4, "wa_015", "nageru", "mg_se05", 56, 64 );
 
 //　俺は左手で目をごしごしとこすり、そのわずかな隙を補うため、右手では闇雲にバットを振り回した￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3373,7 +3449,7 @@ void main()
 		   NULL, "I could tell from the sound of her fluttering skirt in the wind.", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //　スカートの波がゆるりと落ち着き、静寂が戻る…＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3389,7 +3465,11 @@ void main()
 		   NULL, "At that moment, the voice inside of me immediately warned me of impending danger.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys16", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys16", 56, 0 ); }
 //　……はっとする＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　……はっとする。",
@@ -3426,8 +3506,8 @@ void main()
 		   NULL, " Also unable to move, I stared at her back.", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 2000, TRUE );
-	FadeOutBGM( 2, 2000, TRUE );
+	ModFadeOutBGM( 1, 2000, TRUE );
+	ModFadeOutBGM( 2, 2000, TRUE );
 
 //　その静寂を初めに破ったのはレナだった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3465,7 +3545,11 @@ void main()
 		   NULL, "Carelessly, I felt relief upon hearing that pitiful voice...", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys11", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\higurasi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys11", 56, 0 ); }
 
 //「……あ、!w500あの、!w500そのごめんね＠　……そのっ、聞いてもいい？！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -3749,7 +3833,7 @@ void main()
 	ClearMessage();
 
 //	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_022", 56, 64 );
+	ModPlaySE( 4, "wa_022", "iwakannnohatuga", "mg_se12", 56, 64 );
 
 //「な、なんでバットまで同じなのッ？！？！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -3768,9 +3852,13 @@ void main()
 		   NULL, " I had no idea what she was talking about.", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
 
-	PlayBGM( 2, "lsys15", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys15", 56, 0 ); }
 
 //「……お前、何言ってんだ…？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
@@ -3811,7 +3899,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	PlayBGM( 1, "msys15", 56, 0 );
+	ModPlayBGM( 1, "msys15", "hm06_25", "mg_bgm08", 56, 0 );
 
 //「だから………どうしてバットまで悟史くんと同じなのッ？！？！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -3906,7 +3994,7 @@ void main()
 		   NULL, "...Could it be...?", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_023", 56, 64 );
+	ModPlaySE( 4, "wa_023", "himeraretakyousou", "mg_se13", 56, 64 );
 
 //"北条悟史"!w2000
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4254,8 +4342,8 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //　レナを強引に振り向かせた瞬間、俺の全身を電気が走りぬける…！￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4275,7 +4363,11 @@ void main()
 		   NULL, " Keiichi-kun.\"", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys16", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys16", 56, 0 ); }
 
 //　それは、知らない誰かだった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4381,7 +4473,7 @@ void main()
 	OutputLine(NULL, "「悟史くんはね、…",
 		   NULL, "\"Satoshi-kun, you see...", Line_Continue);
 
-	PlaySE( 4, "wa_023", 56, 64 );
+	ModPlaySE( 4, "wa_023", "himeraretakyousou", "mg_se13", 56, 64 );
 	Wait (1800);
 
 //"!s100転校!sd"しちゃったの。＠
@@ -4434,7 +4526,7 @@ void main()
 		   NULL, "She pulled her gaze back and spryly stepped back two, three paces.", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_003", 56, 64 );
+	ModPlaySE( 4, "wa_003", "down2", "mg_se02", 56, 64 );
 //　その途端、俺のひざがかくんと抜け、だらしなく両ひざを地面につける＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　その途端、俺のひざがかくんと抜け、だらしなく両ひざを地面につける。",

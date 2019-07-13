@@ -6,14 +6,18 @@ void main()
 //■主婦殺人事件
 //gosub *tip_s
 	EnableJumpingOfReturnIcon();
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/simen3", 1000 );
-	PlayBGM( 1, "msys13", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys13", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys13", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys13", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\yoru", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys13", 56, 0 ); }
 
 //locate 2,7
 
@@ -32,9 +36,9 @@ void main()
 	SetValidityOfInput( TRUE );
 	DisableWindow();
 	DrawScene("black", 1000 );
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 //gosub *tip_e
 //return
 

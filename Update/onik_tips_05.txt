@@ -7,13 +7,17 @@ void main()
 //*Sub_Tips_005
 //gosub *tip_s
 	EnableJumpingOfReturnIcon();
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
 	DrawScene("black", 1000 );
-	PlayBGM( 2, "lsys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys12", 56, 0 ); }
 
 
 //　昭和五十年十月＠
@@ -167,9 +171,9 @@ void main()
 	SetValidityOfInput( TRUE );
 	DisableWindow();
 	DrawScene("black", 1000 );
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //gosub *tip_e
 //return

@@ -6,13 +6,13 @@ void main()
 
 //*day5
 
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
 	DrawScene("white", 400 );
-	PlayBGM( 1, "msys01", 56, 0 );
+	ModPlayBGM( 1, "msys01", "hm01_01", "mg_bgm01", 56, 0 );
 	ModDrawCharacterWithFiltering(1, 3, "sprite/normal/me1a_wink_a1_", "1", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawScene("background/gk1", 3000 );
 
@@ -278,9 +278,9 @@ void main()
 //時間経過
 	DisableWindow();
 	DrawSceneWithMask("black", "up", 0, 0, 3000 );
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 	DrawSceneWithMask("background/gk1", "left", 0, 0, 200 );
-	PlayBGM( 1, "msys02", 56, 0 );
+	ModPlayBGM( 1, "msys02", "hm01_04", "mg_bgm02", 56, 0 );
 	ModDrawCharacterWithFiltering(2, 5, "sprite/normal/ri1_def_a1_", "0", "right", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 1300, TRUE );
 
 
@@ -602,7 +602,7 @@ void main()
 	ModPlayVoiceLS(3, 3, "ps3/s19/03/990300270", 256, TRUE);
 	OutputLine(NULL, "　綿流祭四凶爆闘！！」",
 		   NULL, " The Watanagashi Four-Demon Fire Fight!\"", Line_Continue);
-	PlaySE( 4, "wa_007", 56, 64 );
+	ModPlaySE( 4, "wa_007", "finish", "mg_se04", 56, 64 );
 	ShakeScreen( 0, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", Line_Normal);
 
@@ -1408,7 +1408,7 @@ void main()
 	DrawSceneWithMask("black", "right", 0, 0, 300 );
 	DrawSceneWithMask("background/gk3", "right", 0, 0, 300 );
 
-	PlayBGM( 1, "msys04", 56, 0 );
+	ModPlayBGM( 1, "msys04", "hm01_02", "mg_bgm04", 56, 0 );
 //　まずは軽快な滑り出し＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　まずは軽快な滑り出し。",
@@ -1448,7 +1448,7 @@ void main()
 	SetValidityOfInput( FALSE );
 	Wait( 500 );
 	SetValidityOfInput( TRUE );
-	PlaySE( 4, "wa_010", 56, 64 );
+	ModPlaySE( 4, "wa_010", "kyupirn", "mg_se04", 56, 64 );
 
 //…俺は違う＠
 	OutputLine(NULL, "…俺は違う！",
@@ -1676,7 +1676,7 @@ void main()
 	DisableWindow();
 	FadeAllBustshots( 400, TRUE );
 
-	PlaySE( 4, "wa_029", 56, 64 );
+	ModPlaySE( 4, "wa_029", "boyoon", "mg_se17", 56, 64 );
 //"校長先生の頭をなでる"
 	if (GetGlobalFlag(GADVMode) == 0) { ClearMessage(); }
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1844,7 +1844,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ど",
 		   NULL, "Ker", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_006", 56, 64 );
+	ModPlaySE( 4, "wa_006", "daidageki", "mg_se03", 56, 64 );
 	ShakeScreen( 1, 50, 20, 5, 0, );
 //っがぁあぁあぁんッ！！＠　教室を揺るがす轟音！＠
 	OutputLine(NULL, "っがぁあぁあぁんッ！！！",
@@ -1865,11 +1865,11 @@ void main()
 
 
 
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	Wait( 200 );
-	PlaySE( 4, "wa_005", 56, 64 );
+	ModPlaySE( 4, "wa_005", "dageki", "mg_se02", 56, 64 );
 	Wait( 200 );
-	PlaySE( 4, "wa_006", 56, 64 );
+	ModPlaySE( 4, "wa_006", "daidageki", "mg_se03", 56, 64 );
 	Wait( 1000 );
 
 //　ずどがががッ！！！/
@@ -1878,7 +1878,7 @@ void main()
 		   NULL, "Boof pow whap!!", Line_ContinueAfterTyping);
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	PlaySE( 4, "wa_011", 56, 64 );
+	ModPlaySE( 4, "wa_011", "kira", "mg_se04", 56, 64 );
 	Wait( 200 );
 
 //　きゅぴーん！
@@ -1886,7 +1886,7 @@ void main()
 	OutputLine(NULL, "　きゅぴーん！",
 		   NULL, "Zazhing!", Line_ContinueAfterTyping);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	ModPlaySE( 4, "wa_007", "finish", "mg_se04", 56, 64 );
 
 //　ばっかぁあぁあぁんッ！！＠
 	OutputLine(NULL, "　ばっかぁあぁあぁんッ！！！",
@@ -1962,7 +1962,7 @@ void main()
 	SetSpeedOfMessage( FALSE, 0, );
 //!sd?
 
-	PlaySE( 4, "wa_002", 56, 64 );
+	ModPlaySE( 4, "wa_002", "down", "mg_se02", 56, 64 );
 //　そう言って倒れこむ魅音￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　そう言って倒れこむ魅音。",
@@ -2183,7 +2183,7 @@ void main()
 	DisableWindow();
 	DrawScene("black", 400 );
 
-	PlaySE( 4, "wa_029", 56, 64 );
+	ModPlaySE( 4, "wa_029", "boyoon", "mg_se17", 56, 64 );
 //"メイドさん口調でしゃべる"
 	if (GetGlobalFlag(GADVMode) == 0) { ClearMessage(); }
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -2411,7 +2411,7 @@ void main()
 	DisableWindow();
 	DrawScene("black", 400 );
 
-	PlaySE( 4, "wa_029", 56, 64 );
+	ModPlaySE( 4, "wa_029", "boyoon", "mg_se17", 56, 64 );
 //"上下１枚ずつ脱衣。"
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "“上下１枚ずつ脱衣。”",
@@ -2717,7 +2717,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_010", 56, 64 );
+	ModPlaySE( 4, "wa_010", "kyupirn", "mg_se04", 56, 64 );
 //「ぉ……俺は勝ぁああぁあぁあつッッ！！！！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei07570", 256, TRUE);
@@ -2732,7 +2732,7 @@ void main()
 	ClearMessage();
 
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	ModPlaySE( 4, "wa_007", "finish", "mg_se04", 56, 64 );
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
 	DisableWindow();
 	DrawScene("white", 50 );
@@ -3333,7 +3333,7 @@ void main()
 	OutputLine(NULL, "「有りだったよな。",
 		   NULL, "\"That was good.", Line_WaitForInput);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	ModPlaySE( 4, "wa_007", "finish", "mg_se04", 56, 64 );
 //……革命返しだぁああぁあぁああッ！！！！！＠
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei07790", 256, TRUE);
 	OutputLine(NULL, "……革命返しだぁああぁあぁああッ！！！！！」",
@@ -3527,7 +3527,7 @@ void main()
 	OutputLine(NULL, "　梨花ちゃんが涙目で泣き真似をした時、レナの両耳から",
 		   NULL, "As Rika-chan mimicked a cat, teary-eyed, rings of smoke", Line_ContinueAfterTyping);
 
-	PlaySE( 4, "wa_016", 56, 64 );
+	ModPlaySE( 4, "wa_016", "pou", "mg_se08", 56, 64 );
 
 //ぽん！と音がして輪っか状の煙があがる＠
 	OutputLine(NULL, "ぽん！と音がして輪っか状の煙があがる。",
@@ -3767,7 +3767,7 @@ void main()
 	OutputLine(NULL, "　圭一さんの罰ゲーム！！！",
 		   NULL, " Keiichi-san's penalty!", Line_Continue);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	ModPlaySE( 4, "wa_007", "finish", "mg_se04", 56, 64 );
 
 //…これですわ！！＠
 	OutputLine(NULL, "…これですわ！！」",
@@ -3794,8 +3794,8 @@ void main()
 	DisableWindow();
 	ModDrawCharacter(1, 4, "sprite/normal/sa4_akuwarai_a1_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	ModDrawCharacter(3, 3, "sprite/normal/me4_huteki_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
 
@@ -3818,7 +3818,7 @@ void main()
 	DisableWindow();
 	DrawScene("black", 200 );
 
-	PlaySE( 4, "wa_029", 56, 64 );
+	ModPlaySE( 4, "wa_029", "boyoon", "mg_se17", 56, 64 );
 
 //"今まで出た罰ゲーム全部"
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3850,7 +3850,7 @@ void main()
 	FadeBustshot( 2, FALSE, 0, 0, 0, 0, 0, TRUE );
 	DrawBG("background/gk1", 0, TRUE );
 	FadeBustshotWithFiltering( 5, "down", 0, FALSE, 0, 0, 3000, TRUE );
-	PlayBGM( 1, "msys03", 56, 0 );
+	ModPlayBGM( 1, "msys03", "hm01_06", "mg_bgm03", 56, 0 );
 	ModDrawCharacterWithFiltering(3, 4, "sprite/normal/sa4_akuwarai_a1_", "1", "left", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
 
 //「圭一さん、言葉遣いが弟属性になっていませんでしてよ？！＠
@@ -4231,11 +4231,15 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("black", "down", 0, 0, 3000 );
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 1000 );
 	SetValidityOfInput( TRUE );
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 	DrawSceneWithMask("background/g3", "right", 0, 0, 200 );
 
 //「ぅ押忍ッ！！　失礼します！！＠
@@ -4365,8 +4369,8 @@ void main()
 	if(GetGlobalFlag(GCensor) <= 1){ModCallScriptSection("zonik_005_vm00_n01","dialog006");}
 	//VoiceMatchingEnd
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 //　校長は一言俺に言った＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　校長は一言俺に言った。",
@@ -4395,7 +4399,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ご",
 		   NULL, "Bo", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_006", 56, 64 );
+	ModPlaySE( 4, "wa_006", "daidageki", "mg_se03", 56, 64 );
 	ShakeScreen( 1, 50, 20, 7, 0, );
 
 //おぉおぉおおおぉおん……ッ！！/
@@ -4416,11 +4420,15 @@ void main()
 		   NULL, "That tremor resounded throughout the Hinamizawan twilight...", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //mov %CAMP_MUGIC,3
-	PlayBGM( 0, "lsys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 0, "lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 0, "Original\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 0, "April2019Update\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 0, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 0, "MangaGamer\lsys12", 56, 0 ); }
 	DisableWindow();
 	SetValidityOfInput( FALSE );
 //	Wait( 1000 );
@@ -4434,9 +4442,13 @@ void main()
 	SetValidityOfInput( TRUE );
 
 //■魅音と下校。
-	FadeOutBGM( 0, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, TRUE );
 	DrawScene("background/m_hi4", 400 );
-	PlayBGM( 2, "lsys11", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\higurasi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys11", 56, 0 ); }
 
 //　レナは梨花ちゃんの頭を好きなだけなでなでできる権利を獲得したので、ほくほくしながら梨花ちゃんたちと下校した＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4519,7 +4531,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	PlayBGM( 1, "msys05", 56, 0 );
+	ModPlayBGM( 1, "msys05", "hm01_07", "mg_bgm06", 56, 0 );
 	ModDrawCharacterWithFiltering(1, 8, "sprite/normal/tomi1_def_", "0", "right", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawSceneWithMask("background/m_hi3", "left", 0, 0, 300 );
 

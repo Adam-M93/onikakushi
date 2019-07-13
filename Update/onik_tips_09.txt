@@ -6,15 +6,15 @@ void main()
 //*Sub_Tips_009
 //gosub *tip_s
 	EnableJumpingOfReturnIcon();
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
 	DrawScene("black", 1000 );
 
 	DrawScene("background/simen3", 1000 );
-	PlayBGM( 1, "msys15", 56, 0 );
+	ModPlayBGM( 1, "msys15", "hm06_26", "mg_bgm08", 56, 0 );
 
 //　昭和５５年６月ＸＸ日夕刊よ＠
 	ClearMessage();
@@ -75,9 +75,9 @@ void main()
 	SetValidityOfInput( TRUE );
 	DisableWindow();
 	DrawScene("black", 1000 );
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 //gosub *tip_e
 //return
 

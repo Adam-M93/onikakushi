@@ -9,12 +9,16 @@ void main()
 //rmode on
 ////setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
 //!sd
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
-	PlayBGM( 2, "lsys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys12", 56, 0 ); }
 	DrawScene("background/ke_ky2", 3000 );
 
 //　喫煙スペースには紫煙が立ち込めていた￥
@@ -189,9 +193,9 @@ void main()
 		   NULL, " H-Hold on for a second, Ooishi-san!\"", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_020", 56, 64 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
+	ModPlaySE( 4, "wa_020", "door", "mg_se10", 56, 64 );
 	DrawSceneWithMask("background/ke_s2", "left", 0, 0, 200 );
 
 //　大石の向かいの席の男が受話器を振っている＠
@@ -257,7 +261,11 @@ void main()
 		   NULL, "From the tone Maebara-kun's voice, I already knew he was in a predicament.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 2, "lsys15", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys15", 56, 0 ); }
 
 //　…前原くんからこちらに電話をかけてくるのは始めて＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -382,7 +390,7 @@ void main()
 		   NULL, "His voice was quivering and hoarse...", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlaySE( 4, "wa_023", 56, 64 );
+	ModPlaySE( 4, "wa_023", "himeraretakyousou", "mg_se13", 56, 64 );
 
 //　……まさか、電話をかけながら、すでに何者かに囲まれている？！!w3000
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -714,9 +722,9 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
-	PlayBGM( 1, "msys08", 56, 0 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
+	ModPlayBGM( 1, "msys08", "hm06_25", "mg_bgm10", 56, 0 );
 
 //　……脳裏に最悪の予感が過ぎる￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1181,8 +1189,8 @@ void main()
 		   NULL, "What... exactly...!?", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 	DrawScene("black", 50 );
 
 //　ぶつん￥
@@ -1287,7 +1295,11 @@ void main()
 		   NULL, "There was no longer a need to hurry.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys11", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\higurasi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys11", 56, 0 ); }
 
 //　……その時、開け放たれた窓の向こうから…ひぐらしの声が聞こえてきた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1340,8 +1352,8 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	DrawScene("white", 3000 );
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //if %kaisou_mode = 1 goto *kaisou_mode
 //gosub *Sub_Tips_099
@@ -1352,25 +1364,37 @@ void main()
 	DrawScene("black", 3000 );
 
 
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys12", 56, 0 ); }
 //!s100
 //locate 7,4
 
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
 	SetStyleOfMessageSwinging( 1 );
 	SetValidityOfTextFade( FALSE );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //昭和５８年６月。/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "昭和５８年６月。",
 		   NULL, "June, 1983", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 	SetStyleOfMessageSwinging( 0 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　某県鹿骨市の寒村、雛見沢で女子生徒殺人事件が起こった。/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1378,23 +1402,31 @@ void main()
 		   NULL, "In Hinamizawa, a remote village near Shishibone city, there was a murder involving two female students.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　容疑者は、前原圭一（１Ｘ歳）/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　容疑者は、前原圭一（１Ｘ歳）",
 		   NULL, "The suspect is: Keiichi Maebara (Aged 1x)", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
 	DrawSceneWithMask("background/ma3", "left", 0, 0, 1300 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　容疑者は自宅にクラスメートの女子２名/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1402,16 +1434,20 @@ void main()
 		   NULL, "The suspect called over his two female classmates", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //（竜宮礼奈・園崎魅音）を呼び寄せ、金属バットで撲殺。
 	OutputLine(NULL, "（竜宮礼奈・園崎魅音）を呼び寄せ、金属バットで撲殺。",
 		   NULL, " (Rena Ryuugu, Mion Sonozaki) to his house, and beat them to death with a metal bat.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
@@ -1421,29 +1457,41 @@ void main()
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
 	SetStyleOfMessageSwinging( 0 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　犯行現場は自宅２階の容疑者の自室だった。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　犯行現場は自宅２階の容疑者の自室だった。",
 		   NULL, "The scene of the crime was the suspect's room on the second floor of his house.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　室内は凄まじい返り血に彩られ、被害者ともみ合った形跡が認められた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　室内は凄まじい返り血に彩られ、被害者ともみ合った形跡が認められた。",
 		   NULL, "The inside of the room was covered with a significant quantity of splattered blood, and there were signs of a struggle with the victims.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　また、犯行現場とは別に、玄関、居間、台所でも荒らされた形跡が認められた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1451,7 +1499,7 @@ void main()
 		   NULL, "In addition to the scene of the crime, the entryway, living room, and kitchen, all had traces of a struggle.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
@@ -1460,18 +1508,26 @@ void main()
 	DisableWindow();
 	DrawSceneWithMask("background/ma_g3_01", "left", 0, 0, 1300 );
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　玄関では、靴箱と壁に激しい打撲の痕跡。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　玄関では、靴箱と壁に激しい打撲の痕跡。",
 		   NULL, "At the entryway, the shoe rack and wall had evidence of being impacted by a strong blunt force.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　凶器のバットによるものと断定。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1479,11 +1535,15 @@ void main()
 		   NULL, "It is believed to have been the same bat as the murder weapon.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　痕跡に血液反応が出なかったことから、犯行以前に破壊したものと推定。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1491,11 +1551,15 @@ void main()
 		   NULL, " Having no traces of blood, it is believed the destruction occurred before the murders.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　被害者の逃走を阻止するため、容疑者が威圧行為を行なった可能性がある。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1503,12 +1567,16 @@ void main()
 		   NULL, "There is the possibility that the suspect overpowered his victims to keep them from fleeing.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 	DrawSceneWithMask("background/ma_d1", "right", 0, 0, 1300 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
@@ -1518,11 +1586,15 @@ void main()
 	OutputLine(NULL, "　居間では絨毯が剥がされ、投げ捨てられていた。",
 		   NULL, "In the living room, the rug had been pulled back, then thrown aside.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　これは被害者ともみ合った際のものとは考え難く、その真意は不明。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1530,12 +1602,16 @@ void main()
 		   NULL, "It is hard to believe that this had a connection to the struggle with the victims, and thus the reason for this remains unknown.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
 	DrawSceneWithMask("background/ma_s1", "right", 0, 0, 1300 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
@@ -1545,33 +1621,45 @@ void main()
 	OutputLine(NULL, "　台所ではゴミ袋が破かれ、その中身が床にばら撒かれていた。",
 		   NULL, "In the kitchen, the garbage bag was torn apart, and its contents were spread out on the floor.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　ゴミは周囲に飛散し、容疑者のものと思われる手形も発見された。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ゴミは周囲に飛散し、容疑者のものと思われる手形も発見された。",
 		   NULL, "Garbage was strewn about in the surrounding area, and handprints believed to belong to the suspect were discovered.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　容疑者は何らかの理由でゴミを出し、それを掌で叩いたものと考えられる。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　容疑者は何らかの理由でゴミを出し、それを掌で叩いたものと考えられる。",
 		   NULL, "It is believed that the suspect had for some reason taken out the garbage and struck it with his fists.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　その真意は不明。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1579,40 +1667,52 @@ void main()
 		   NULL, "The reason for this remains unknown.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,4
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　また、冷蔵庫に貼り付けられていたメモには「針がなかった？」と記されていた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　また、冷蔵庫に貼り付けられていたメモには「針がなかった？」と記されていた。",
 		   NULL, "In addition, there was a note stuck to the fridge. The words \"Was there a needle?\" were written on it.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　意味不明。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　意味不明。",
 		   NULL, "The meaning behind this remains unclear.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　念のためゴミを探すが、針は発見できなかった。
 	OutputLine(NULL, "　念のためゴミを探すが、針は発見できなかった。",
 		   NULL, " Just in case, the garbage was searched, but a needle was not discovered.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
@@ -1621,75 +1721,103 @@ void main()
 //locate 0,3
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　荒らされてはいなかったが、引越し以来、開放したままになっているガレージのシャッターが閉じられていた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　荒らされてはいなかったが、引越し以来、開放したままになっているガレージのシャッターが閉じられていた。",
 		   NULL, "Though the garage door was functional, it had been left open ever since the suspect moved in. The garage door was found closed.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　シャッターからは容疑者の指紋を検出。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　シャッターからは容疑者の指紋を検出。",
 		   NULL, "The suspect's fingerprints were discovered on the garage door.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　その真意は不明。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　その真意は不明。",
 		   NULL, "The reason behind this remains unknown.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　容疑者は犯行現場から逃走したが、/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　容疑者は犯行現場から逃走したが、",
 		   NULL, "The suspect fled the scene of the crime.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //警邏中の警察官（雛見沢駐在所）が電話ボックス内で倒れているのを発見する。/
 	OutputLine(NULL, "警邏中の警察官（雛見沢駐在所）が電話ボックス内で倒れているのを発見する。",
 		   NULL, " However, a patrolling officer (Hinamizawa Local PD) found the suspect collapsed inside a phone booth.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,5
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　発見時、容疑者は意識不明の重体。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　発見時、容疑者は意識不明の重体。",
 		   NULL, "At the time of discovery, the suspect was unconscious in critical condition.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　直ちに村内の診療所に搬送し手当てをしたが、意識は戻らず２４時間後に死亡した。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1697,7 +1825,7 @@ void main()
 		   NULL, "He was rushed to the local hospital for treatment, but did not regain consciousness and died 24 hours later.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
@@ -1706,17 +1834,25 @@ void main()
 //locate 0,4
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　検死の結果、直接の死因は出血性ショック死。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　検死の結果、直接の死因は出血性ショック死。",
 		   NULL, "The results of the autopsy indicate the immediate cause of death to have been hypovolemic shock.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　自らの爪で喉を引き裂き、その結果の出血で死に至ったと断定した。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1724,131 +1860,175 @@ void main()
 		   NULL, "It was determined that the suspect had clawed at his own throat with his fingernails, and the resulting bleeding caused his death.", Line_ContinueAfterTyping);
 
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,3
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　先週に発生した富竹氏事件の異常な死に方との酷似に、警察は関連性があるものとして捜査を開始する。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　先週に発生した富竹氏事件の異常な死に方との酷似に、警察は関連性があるものとして捜査を開始する。",
 		   NULL, "With the similarity to the death of Tomitake-san the prior week, the police believe there to be a connection and have opened an investigation.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //（ただし、地元からの強い要望により非公開捜査）
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "（ただし、地元からの強い要望により非公開捜査）",
 		   NULL, "(However, due to the wishes of the local authorities, it will be a confidential investigation.)", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　異常な死に方に何らかの薬物の使用を疑うが、富竹氏事件と同様に一切検出されない。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　異常な死に方に何らかの薬物の使用を疑うが、富竹氏事件と同様に一切検出されない。",
 		   NULL, "Due to the abnormal nature of the death, it was suspected that drugs were involved. But as with Tomitake-san, no traces were discovered.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,5
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　当初はあまりの不可解さに、衝動的な突発的犯行と断定していた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　当初はあまりの不可解さに、衝動的な突発的犯行と断定していた。",
 		   NULL, "What prompted all this remains inexplicable. As such, this case is being treated as an act committed on impulse.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　だが、容疑者の犯行直前までの奇行が次々と露呈するに従い、その方針は変更されることとなる。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　だが、容疑者の犯行直前までの奇行が次々と露呈するに従い、その方針は変更されることとなる。",
 		   NULL, "However, with several accounts of the suspect's bizarre behavior leading up to the incident, it is possible that this was premeditated.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　親しかったグループとの離縁。孤立。意味不明の言動。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　親しかったグループとの離縁。孤立。意味不明の言動。",
 		   NULL, "Separated from his group of friends. Isolation. Inexplicable behavior.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　犯行の数日前からは金属バットを持ち歩くようになっていた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　犯行の数日前からは金属バットを持ち歩くようになっていた。",
 		   NULL, "Several days before the incident, the suspect began carrying around a metal bat.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　攻撃的な言動、独り言は学校でもしばしば見られ、クラスメートが実際にその一部を聞いている。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　攻撃的な言動、独り言は学校でもしばしば見られ、クラスメートが実際にその一部を聞いている。",
 		   NULL, "The suspect was observed displaying aggressive behavior, as well as talking to himself at school. His classmates have actually heard portions of what he was saying.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,3
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　犯行の前々日には、両親に自らの死をほのめかす発言もしていた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　犯行の前々日には、両親に自らの死をほのめかす発言もしていた。",
 		   NULL, "Two days before the incident, the suspect declared to his parents the possibility of his death.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　警察は、これらの状況から、この事件が突発的なものでなく、数日前から予定された計画的犯行の可能性があるとして捜査を開始する。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　警察は、これらの状況から、この事件が突発的なものでなく、数日前から予定された計画的犯行の可能性があるとして捜査を開始する。",
 		   NULL, "Due to these circumstances, the police have begun an investigation on the possibility that this crime was not committed on impulse, but was instead planned several days in advance.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
 	DrawScene("background/tegami1", 1000 );
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //locate 0,4
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
 
@@ -1857,19 +2037,27 @@ void main()
 	OutputLine(NULL, "　その後、",
 		   NULL, "Afterwards...", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　容疑者の自室から直筆のメモが発見された。
 	OutputLine(NULL, "　容疑者の自室から直筆のメモが発見された。",
 		   NULL, " A note was found in the suspect's room that he had written himself.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　メモはＢ５の大学ノートを半分に裂いたもの２枚で構成され、!s200まるで隠蔽するかのように、!s100壁時計の裏に貼られ、隠されていた。/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1877,11 +2065,15 @@ void main()
 		   NULL, "The note was written on two sheets from a B5 college-ruled notebook that had each been torn in half.", Line_ContinueAfterTyping);
 //!s200
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まるで隠蔽するかのように、",
@@ -1889,31 +2081,43 @@ void main()
 
 // !s100
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 	OutputLine(NULL, "壁時計の裏に貼られ、隠されていた。",
 		   NULL, " was stuck hidden behind a clock on the wall.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　内容は別添の通り。/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　内容は別添の通り。",
 		   NULL, "The contents are as written in the appendix.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
 	DrawScene("background/sora5", 1000 );
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 //　警察は事件と密接に関係するものとして重視。
@@ -1921,11 +2125,15 @@ void main()
 	OutputLine(NULL, "　警察は事件と密接に関係するものとして重視。",
 		   NULL, "The police believe it to be strongly related to the incident.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　容疑者が、何らかの事件に巻き込まれていた可能性があるとして再び捜査方針を転換した。
@@ -1933,11 +2141,15 @@ void main()
 	OutputLine(NULL, "　容疑者が、何らかの事件に巻き込まれていた可能性があるとして再び捜査方針を転換した。",
 		   NULL, "The police changed their line of investigation based on the possibility that the suspect was involved in some sort of incident himself.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　だが、その後なんの手がかりも掴めず、メモそのものの信憑性も疑われるようになる。
@@ -1945,11 +2157,15 @@ void main()
 	OutputLine(NULL, "　だが、その後なんの手がかりも掴めず、メモそのものの信憑性も疑われるようになる。",
 		   NULL, "However, no further clues were found, casting doubt on the credibility of the note.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　この事件は突発的なものなのか、計画的なものなのか。
@@ -1957,23 +2173,35 @@ void main()
 	OutputLine(NULL, "　この事件は突発的なものなのか、計画的なものなのか。",
 		   NULL, "Was the crime impulsive or premeditated?", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　真相もわからず進展もなく、事件は文字通り迷宮入りの様相となった。/
 	OutputLine(NULL, "　真相もわからず進展もなく、事件は文字通り迷宮入りの様相となった。",
 		   NULL, " With the situation unclear and no further developments, the case has been labeled as 'Unresolved.'", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-	PlayBGM( 1, "msys11", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\higurasi", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys11", 56, 0 ); }
 	DrawScene("black", 1000 );
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //locate 0,5
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
 
@@ -1982,19 +2210,27 @@ void main()
 	OutputLine(NULL, "　だが……後年。",
 		   NULL, "However... the following year,", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　そのメモにひとつの不審が浮上した。/
 	OutputLine(NULL, "　そのメモにひとつの不審が浮上した。",
 		   NULL, " suspicion arose regarding the nature of the note.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
 
@@ -2003,21 +2239,29 @@ void main()
 	OutputLine(NULL, "　２枚のメモは、Ｂ５のページを半分にしたものが１枚ずつではなく…。",
 		   NULL, "The note was not written on two halves of B5 paper from two separate sheets...", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　元はＢ５の１ページに書かれたものを…何者かが、
 	OutputLine(NULL, "　元はＢ５の１ページに書かれたものを…何者かが、",
 		   NULL, "but was originally a single sheet of B5 paper.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　"真ん中の数行を削除するために"/
@@ -2025,18 +2269,26 @@ void main()
 	OutputLine(NULL, "　“真ん中の数行を削除するために”",
 		   NULL, "In order to erase several lines from the middle, someone had...", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //破り捨てたのではないか…というのだ。/
 	OutputLine(NULL, "破り捨てたのではないか…というのだ。",
 		   NULL, " torn them out.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
 
@@ -2045,11 +2297,15 @@ void main()
 	OutputLine(NULL, "　文字の大きさと、破かれた部分から推定して、削除されたのは２〜３行。",
 		   NULL, "Judging from the size of the letters, the missing section is estimated to be 2-3 lines.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　削除した人物は容疑者以外である可能性が高い。/
@@ -2057,11 +2313,15 @@ void main()
 	OutputLine(NULL, "　削除した人物は容疑者以外である可能性が高い。",
 		   NULL, "It is highly probable that the person who eliminated the lines in question is not the suspect.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　また、時計裏に付着していた大量のセロテープ跡から、/
@@ -2069,33 +2329,45 @@ void main()
 	OutputLine(NULL, "　また、時計裏に付着していた大量のセロテープ跡から、",
 		   NULL, "In addition, judging from traces of large quantities of cellophane tape being stuck to the back of the clock,", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //"メモ以外にも何かが貼り付けられていたのではないか"との憶測も出た。
 	OutputLine(NULL, "“メモ以外にも何かが貼り付けられていたのではないか”との憶測も出た。",
 		   NULL, " speculation that something other than the note was stuck there, has arisen.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,4
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　第一発見者は、かねてから事件との関係を噂される疑惑の刑事。大石蔵人。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　第一発見者は、かねてから事件との関係を噂される疑惑の刑事。大石蔵人。",
 		   NULL, "The person who first discovered the crime was a detective rumored to have a connection with the incident: Kuraudo Ooishi.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　任意で事情聴取をしたが、メモの破損については否定する………。/
@@ -2103,17 +2375,25 @@ void main()
 	OutputLine(NULL, "　任意で事情聴取をしたが、メモの破損については否定する………。",
 		   NULL, "He underwent voluntary questioning, but denies involvement in any damages to the note.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	DisableWindow();
 	DrawScene("background/tegami2", 1000 );
 	ClearMessage();
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 
-	PlayBGM( 0, "lsys15", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 0, "lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 0, "Original\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 0, "April2019Update\lsys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 0, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 0, "MangaGamer\lsys15", 56, 0 ); }
 //dwaveplayloop 9
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //locate 4,6
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
 	SetStyleOfMessageSwinging( 1 );
@@ -2122,32 +2402,44 @@ void main()
 	OutputLine(NULL, "容疑者のメモ",
 		   NULL, "The suspect's note:", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　私、前原圭一は命を狙われています
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　私、前原圭一は命を狙われています",
 		   NULL, "I, Keiichi Maebara, am in fear for my life.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　なぜ、誰に、命を狙われているのかはわかりません。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　なぜ、誰に、命を狙われているのかはわかりません。",
 		   NULL, "I do not know why they are after my life.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　ただひとつ判る事は、オヤシロさまの祟りと関係があるということです。
@@ -2155,11 +2447,15 @@ void main()
 	OutputLine(NULL, "　ただひとつ判る事は、オヤシロさまの祟りと関係があるということです。",
 		   NULL, "The only thing I do know is that it has to do with Oyashiro-sama's curse.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　レナと魅音は犯人の一味。/
@@ -2167,27 +2463,39 @@ void main()
 	OutputLine(NULL, "　レナと魅音は犯人の一味。",
 		   NULL, "Rena and Mion are conspirators of the perpetrators.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //他にも大人が４～５人以上。/
 	OutputLine(NULL, "他にも大人が４〜５人以上。",
 		   NULL, " There are four or five adults, maybe more.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //白いワゴン車を所有。
 	OutputLine(NULL, "白いワゴン車を所有。",
 		   NULL, " They have a white van.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //（ここまでが１枚目。ここから下は真横に破られている。）
@@ -2195,7 +2503,7 @@ void main()
 	OutputLine(NULL, "（ここまでが１枚目。ここから下は真横に破られている。）",
 		   NULL, "(This is all on the first sheet. The section below this has been ripped out.)", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 	DisableWindow();
@@ -2204,17 +2512,25 @@ void main()
 //locate 0,2
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //（ここからが２枚目。ここから上が真横に破られている。）
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "（ここからが２枚目。ここから上が真横に破られている。）",
 		   NULL, "(This is from the second sheet. The section above this has been ripped out.)", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　どうしてこんなことになったのか、私にはわかりません。
@@ -2222,11 +2538,15 @@ void main()
 	OutputLine(NULL, "どうしてこんなことになったのか、私にはわかりません。",
 		   NULL, "I have no idea why it has become like this.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 
 //　これをあなたが読んだなら、その時、私は死んでいるでしょう。/
@@ -2234,44 +2554,60 @@ void main()
 	OutputLine(NULL, "これをあなたが読んだなら、その時、私は死んでいるでしょう。",
 		   NULL, "If you are reading this, then I am probably already dead.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　…死体があるか、ないかの違いはあるでしょうが。
 	OutputLine(NULL, "…死体があるか、ないかの違いはあるでしょうが。",
 		   NULL, " ...Though you may or may not find my body.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 	ClearMessage();
 
 //locate 0,6
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 //　これを読んだあなた。どうか真相を暴いてください。/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "これを読んだあなた。どうか真相を暴いてください。",
 		   NULL, "You, who are reading this. Please uncover the truth.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //それだけが私の望みです。
 	OutputLine(NULL, "それだけが私の望みです。",
 		   NULL, " That is my only desire.", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 
 //locate 15,12
 //	SetDrawingPointOfMessage( 0, 12 );
 //	SetStyleOfMessageSwinging( 2 );
-	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 2, "lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 2, "Original\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 2, "April2019Update\lsys24", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 2, "Console\LoopSE\taip", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 2, "MangaGamer\lsys24", 56, 0 ); }
 
 //　前原圭一/
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n\n\n\n", Line_ContinueAfterTyping); }
@@ -2280,20 +2616,20 @@ void main()
 	OutputLine(NULL, "前原圭一",
 		   NULL, "Keiichi Maebara", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 2, 10, TRUE );
+	ModFadeOutBGM( 2, 10, TRUE );
 	OutputLineAll(NULL, "", Line_Normal);
 
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 0, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, TRUE );
 	SetValidityOfInput( FALSE );
 	Wait( 2000 );
 	SetValidityOfInput( TRUE );
 
 	DisableWindow();
 	DrawScene("white", 100 );
-	PlaySE( 4, "wa_036", 56, 64 );
+	ModPlaySE( 4, "wa_036", "bb", "mg_se20", 56, 64 );
 	DrawScene("end_1", 100 );
 //	DrawScene( "end_2", 200 );
 	DrawScene("end_3", 4000 );
@@ -2329,7 +2665,7 @@ void main()
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
 
 //	DrawSceneWithMask( "s_jump_back", "4", 0, 0, 1000 );
-	PlaySE( 4, "wa_041", 56, 64 );
+	ModPlaySE( 4, "wa_041", "se051", "mg_se15", 56, 64 );
 	DrawSceneWithMask("ex_otsu", "5", 0, 0, 1000 );
 	Wait( 10000 );
 //	DrawSceneWithMask( "s_jump_back", "4", 0, 0, 1000 );

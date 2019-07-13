@@ -5,14 +5,14 @@ void main()
 //*Sub_Tips_020
 //gosub *tip_s
 	EnableJumpingOfReturnIcon();
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 	DisableWindow();
 	DrawScene("black", 1000 );
 	DrawScene("background/tennai1", 1000 );
-	PlayBGM( 1, "msys01", 56, 0 );
+	ModPlayBGM( 1, "msys01", "hm01_01", "mg_bgm01", 56, 0 );
 
 //　セブンスマートは市内にある、酒類食料品の安売量販店だ￥
 	ClearMessage();
@@ -125,9 +125,9 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_023", 56, 64 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
+	ModPlaySE( 4, "wa_023", "himeraretakyousou", "mg_se13", 56, 64 );
 	SetValidityOfWindowDisablingWhenGraphicsControl( FALSE );
 	DrawFilm( 2, 153, 153, 153, 255, 0, 3000, TRUE );
 ////print 42
@@ -181,7 +181,7 @@ void main()
 		   NULL, "I go through the sound and presences again, looking.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys07", 56, 0 );
+	ModPlayBGM( 1, "msys07", "hm06_25", "mg_bgm08", 56, 0 );
 
 //　他の買い物客の気配＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -229,9 +229,9 @@ void main()
 		   NULL, "I smiled wryly at the thought of using a vague word like \"probably\" right before contradicting it with \"definitely.\"", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
-	PlaySE( 4, "wa_025", 56, 64 );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
+	ModPlaySE( 4, "wa_025", "jikuunosakeme", "mg_se15", 56, 64 );
 
 //　その時、ぞくりとして時間の再生を止めた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -272,7 +272,11 @@ void main()
 		   NULL, "While carrying that frightening shadow on my back, I was gleefully running around the store searching for a case of noodles...?", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys16", 56, 0 );
+	if (GetGlobalFlag(GAltSEflow) == 0) { 	PlayBGM( 1, "msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 1) { 	PlayBGM( 1, "Original\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 2) { 	PlayBGM( 1, "April2019Update\msys16", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 3) { 	PlayBGM( 1, "Console\LoopSE\semi_r", 56, 0 ); }
+	if (GetGlobalFlag(GAltSEflow) == 4) { 	PlayBGM( 1, "MangaGamer\msys16", 56, 0 ); }
 
 //　お袋への悪態をつきながら、インスタントのコーナーを駆け回る俺...＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -478,8 +482,8 @@ void main()
 	OutputLine(NULL, "　なのに、",
 		   NULL, "And yet...", Line_ContinueAfterTyping);
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //ぺた＠...と音がした￥
 
@@ -510,8 +514,8 @@ void main()
 	ClearMessage();
 
 
-	FadeOutBGM( 1, 1000, TRUE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 
 //　もうそれ以上は音はしなかった＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -626,7 +630,7 @@ void main()
 		   NULL, " Follow the rules!!!", Line_Normal);
 	ClearMessage();
 
-	PlaySE( 4, "wa_026", 56, 64 );
+	ModPlaySE( 4, "wa_026", "kirinomeikyuu", "mg_se13", 56, 64 );
 
 //　ぺた＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -824,7 +828,7 @@ void main()
 
 
 
-	PlaySE( 4, "wa_025", 56, 64 );
+	ModPlaySE( 4, "wa_025", "jikuunosakeme", "mg_se15", 56, 64 );
 
 //locate 0,5
 
@@ -851,9 +855,9 @@ void main()
 	SetValidityOfInput( TRUE );
 	DisableWindow();
 	DrawScene("black", 1000 );
-	FadeOutBGM( 0, 1000, FALSE );
-	FadeOutBGM( 1, 1000, FALSE );
-	FadeOutBGM( 2, 1000, TRUE );
+	ModFadeOutBGM( 0, 1000, FALSE );
+	ModFadeOutBGM( 1, 1000, FALSE );
+	ModFadeOutBGM( 2, 1000, TRUE );
 //setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
 //gosub *tip_e
 
